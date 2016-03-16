@@ -22,12 +22,12 @@ login = requests.post(args.url + '/rest-service-fecru/auth/login',
 if (login.status_code != 200):
     print('Login failed')
     exit(1)
-token = login.json().token
+token = login.json()['token']
     
 request = {
     'repository': args.repository,
     'changesets': {
-        'changesetData': map(lambda commit: {'id': commit.strip()}, commits)
+        'changesetData': [{'id': commit.strip()} for commit in commits]
     }
 }
 addChangesets = requests.post(args.url + '/rest-service/reviews-v1/' + args.review_id + '/addChangeset', 
