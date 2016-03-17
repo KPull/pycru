@@ -1,6 +1,12 @@
 # pycru
 Command-line Python script which adds the specified git commits to a Crucible review
 
+## Prerequisites
+
+Before you can use this script, you must install the `requests` package using `pip` as follows:
+
+    pip install requests
+
 ## Usage
 
     pycru [-h] <url> <username> <repo> <review-id>
@@ -15,7 +21,7 @@ The script will login into the specified Crucible server on the URL, using the s
 
 For example, the following command will upload all on the current git branch but not on the `develop` branch to the review with ID REV-203:
 
-    git rev-list develop..HEAD | pycru https://test.crucibletest.com john.doe MainProjectRepo REV-203
+    git rev-list develop..HEAD | py pycru https://test.crucibletest.com john.doe MainProjectRepo REV-203
 
 Enjoy!
 
