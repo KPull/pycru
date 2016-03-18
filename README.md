@@ -19,7 +19,7 @@ Before you can use this script, you must install the `requests` package using `p
 
 The script will login into the specified Crucible server on the URL, using the specified username and password (entered after you run the script) and add the input commits/revisions, taken from the specified repository, to the specified open review. You must specify the list of commit/revision IDs to add on the standard input stream.
 
-For example, the following command will upload all on the current git branch but not on the `develop` branch to the review with ID REV-203:
+For example, the following command will upload all commits on the current git branch but not on the `develop` branch to the review with ID REV-203:
 
     git rev-list develop..HEAD | py pycru https://test.crucibletest.com john.doe MainProjectRepo REV-203
 
